@@ -32,33 +32,33 @@ def user_input(prompt):
 # runs one of the above functions based on what function_code it gets
 def select(function_code):
     # Create
-    if function_code == "C":
+    if function_code == "C" or function_code == "c":
         input_item = user_input("Input item: ")
         create(input_item)
 
     # Read
-    elif function_code == "R":
+    elif function_code == "R" or function_code == "r":
         item_index = int(user_input("Index Number? "))
         # Remember that item_index must actually exist or our program will crash.
         print(read(item_index))
 
     # Update
-    elif function_code == "U":
+    elif function_code == "U" or function_code == "u":
         input_index = int(user_input("Which index would you like to update? "))
         input_item = user_input("What would you like to update it with? ")
         update(input_index, input_item)
 
     # Destroy
-    elif function_code == "D":
+    elif function_code == "D" or function_code == "d":
         index = int(user_input("At which index is the item you would like to delete? "))
         destroy(index)
 
     # List all items including indexes
-    elif function_code == "P":
+    elif function_code == "P" or function_code == "p":
         list_all_items()
 
     # return false so it ultimately sets the running variable down in the while loop to false
-    elif function_code == "Q":
+    elif function_code == "Q" or function_code == "q":
         return False
 
     # Catch all
